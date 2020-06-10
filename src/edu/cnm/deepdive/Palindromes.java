@@ -11,4 +11,8 @@ public class Palindromes {
     );
   }
 
+  public static boolean testDenormalized(String string) {
+
+   String.removeAll = new String();
+
 }

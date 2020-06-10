@@ -16,3 +16,21 @@ public class Palindromes {
 /** @testDenormalized modifies current string by removing all white space and all uppercase */
 /** @return returns a string that has been modified so that it may be processed by the testRecursive method*/
 
+public static boolean testDenormalized(String input) {
+  String normalized = input.replaceAll("[\\W_]+", "").toLowerCase();
+  return testRecursive(normalized);
+}
+
+  public static boolean testIterative(String input) {
+  boolean isPalindrome = true;
+  double x = 0, y;
+  for (int i = 0, j = input.length() - 1; i < j; i++, j--) {
+    if (input.charAt(j) != input.charAt(j)) {
+      isPalindrome = false;
+      break;
+    }
+  }
+  return isPalindrome;
+  }
+
+}
